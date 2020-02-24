@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<img href="{{ url_for('files') }}"/>
+<ul>
+    {% for x in images %}
+    <li>
+        {{ x }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
