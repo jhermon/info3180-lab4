@@ -50,7 +50,7 @@ def upload():
 def get_upload_images():
     path = './app/static/uploads'
     images = []
-    for root, dirs, files in os.walk(path):
+    for  files in os.walk(path):
         for file in files:
             images.append(file)
     return images

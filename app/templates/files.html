@@ -3,11 +3,13 @@
 {% block main %}
 <h7>Images below</h7>
 <img href="{{ url_for('files') }}"/>
-<ul>
+<div class="view"><ul></div>
     {% for x in images %}
-    <li>
-        {{ x }}
-    </li>
+    <div class="view_items">
+        <li>
+            <img src="{{(x)}}"/>
+        <li>
+    </div>
     {% endfor %}
-</ul>
+<div></ul></div>
 {% endblock %}

@@ -1,3 +1,9 @@
 body {
     padding-top: 5rem;
 }
+
+.view,.view_items{
+    display: grid;
+    list-style:none ;
+    
+}
