@@ -48,20 +48,19 @@ def upload():
 
 
 def get_upload_images():
-    path = './app/static/uploads'
+    path = app.config['UPLOAD_FOLDER']
     images = []
-    for  files in os.walk(path):
+    for subdir,dirs,files in os.walk(path):
         for file in files:
-            images.append(file)
+            if file.split('.')[-1] in ('jpg','png'):
+                images.append(file)
     return images
 
 @app.route('/files')
 def files():
     if not session.get('logged_in'):
         abort(401)
-    else:
-        images = get_upload_images()
-        return render_template('files.html', images=images)
+    return render_template('files.html', images=get_upload_images())
 
 
 @app.route('/login', methods=['POST', 'GET'])

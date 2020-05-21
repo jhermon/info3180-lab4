@@ -1,15 +1,13 @@
 {% extends 'base.html' %}
 
 {% block main %}
-<h7>Images below</h7>
-<img href="{{ url_for('files') }}"/>
-<div class="view"><ul></div>
+<h7>Images below</h7><br>
+
+<ul class ="images">
     {% for x in images %}
-    <div class="view_items">
-        <li>
-            <img src="{{(x)}}"/>
-        <li>
-    </div>
+    <li class="view_items">
+        <img class="photo" src="{{url_for('static', filename='uploads/' + x)}}">
+    </li>
     {% endfor %}
-<div></ul></div>
+</ul>
 {% endblock %}
